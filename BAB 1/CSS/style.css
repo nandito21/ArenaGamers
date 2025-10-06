@@ -1,0 +1,101 @@
+/* Style Umum */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #0d1b2a;
+  color: #fff;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #1b263b;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.navbar nav a {
+  color: #f0a500;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.navbar nav a:hover {
+  color: #ffd60a;
+}
+
+/* Kontainer Utama */
+.container {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #f0a500;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffd60a;
+}
+
+/* Tombol di Index */
+.btn {
+  background-color: #f0a500;
+  color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #ffd60a;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #1b263b;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .form-box {
+    width: 90%;
+  }
+}

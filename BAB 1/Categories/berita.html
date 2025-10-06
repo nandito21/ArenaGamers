@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Berita Gaming - ArenaGamers</title>
+  <link rel="stylesheet" href="../CSS/style.css">
+  <style>
+    /* Tambahan gaya untuk tampilan tabel */
+    body {
+      background-color: #000f63;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .navbar {
+      background-color: #001f80;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .table-container {
+      width: 80%;
+      margin: 40px auto;
+      background: #0218a5;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table, th, td {
+      border: 1px solid white;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    input, button {
+      padding: 8px;
+      margin: 5px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    button {
+      background-color: #00c3ff;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #008fcc;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="navbar">
+    <h2>📢 Manajemen Berita Gaming</h2>
+    <a href="../dashboard.html">Kembali ke Dashboard</a>
+  </div>
+
+  <div class="table-container">
+    <h3>Daftar Berita Gaming</h3>
+
+    <form id="formBerita">
+      <label>Judul Berita:</label>
+      <input type="text" id="judulBerita" required>
+      <label>Tanggal:</label>
+      <input type="date" id="tanggalBerita" required>
+      <button type="button" onclick="tambahBerita()">Tambah Berita</button>
+    </form>
+
+    <table id="tabelBerita">
+      <tr>
+        <th>ID</th>
+        <th>Judul</th>
+        <th>Tanggal</th>
+        <th>Aksi</th>
+      </tr>
+    </table>
+  </div>
+
+  <script>
+    let id = 1;
+    function tambahBerita() {
+      const judul = document.getElementById('judulBerita').value.trim();
+      const tanggal = document.getElementById('tanggalBerita').value;
+
+      if (judul && tanggal) {
+        const tabel = document.getElementById('tabelBerita');
+        const baris = tabel.insertRow(-1);
+
+        baris.innerHTML = `
+          <td>${id++}</td>
+          <td>${judul}</td>
+          <td>${tanggal}</td>
+          <td><button onclick="hapusBaris(this)">Hapus</button></td>
+        `;
+
+        document.getElementById('formBerita').reset();
+      } else {
+        alert("Isi semua kolom terlebih dahulu!");
+      }
+    }
+
+    function hapusBaris(btn) {
+      btn.closest('tr').remove();
+    }
+  </script>
+
+</body>
+</html>
