@@ -1,0 +1,283 @@
+/* Style Umum */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #0d1b2a;
+  color: #fff;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #1b263b;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.navbar nav a {
+  color: #f0a500;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.navbar nav a:hover {
+  color: #ffd60a;
+}
+
+/* Kontainer Utama */
+.container {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #f0a500;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffd60a;
+}
+
+/* Tombol di Index */
+.btn {
+  background-color: #f0a500;
+  color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #ffd60a;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #1b263b;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .form-box {
+    width: 90%;
+  }
+}
+/* =====================
+   STYLE UTAMA ARENAGAMERS
+   Tampilan modern biru gelap (seperti contoh e-KTP)
+===================== */
+
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Body */
+body {
+  background-color: #0b1221;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* =====================
+   NAVBAR
+===================== */
+.navbar {
+  background-color: #102c75;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar h1, .navbar h2 {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.navbar nav a, .navbar a {
+  color: #cde1ff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar nav a:hover, .navbar a:hover {
+  color: #60a5fa;
+}
+
+/* =====================
+   KONTEN UTAMA
+===================== */
+.container {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.container h2 {
+  color: #cde1ff;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.container p {
+  color: #a9bce4;
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 25px auto;
+}
+
+/* =====================
+   TOMBOL & FORM
+===================== */
+button,
+.btn {
+  background-color: #2563eb;
+  color: #fff;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+}
+
+button:hover,
+.btn:hover {
+  background-color: #1e40af;
+}
+
+/* Form box (login, register) */
+.form-box {
+  background-color: #12214d;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+input:focus {
+  border: 2px solid #3b82f6;
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+  background-color: #102c75;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+/* =====================
+   TABEL (untuk berita & turnamen)
+===================== */
+.table-container {
+  width: 85%;
+  margin: 40px auto;
+  background-color: #12214d;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #3b82f6;
+}
+
+th {
+  background-color: #1e3a8a;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+}
+
+/* =====================
+   RESPONSIVE DESIGN
+===================== */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar nav a {
+    margin: 8px 10px;
+  }
+
+  .form-box {
+    width: 90%;
+  }
+
+  .table-container {
+    width: 95%;
+  }
+}
