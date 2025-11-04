@@ -6,7 +6,6 @@
   <title>Berita Gaming - ArenaGamers</title>
   <link rel="stylesheet" href="../CSS/style.css">
   <style>
-    /* Tambahan gaya untuk tampilan tabel */
     body {
       background-color: #000f63;
       color: white;
@@ -102,10 +101,24 @@
       <button type="submit" name="submit">Simpan Berita</button>
     </form>
 
+    <?php
+      // === Simulasi Proses Tambah Berita (tanpa database) ===
+      if (isset($_POST['submit'])) {
+        $judul   = htmlspecialchars($_POST['judul']);
+        $isi     = htmlspecialchars($_POST['isi']);
+        $penulis = htmlspecialchars($_POST['penulis']);
+
+        echo "
+          <script>
+            alert('Berita berhasil dikirim!\\nJudul: $judul\\nPenulis: $penulis');
+          </script>
+        ";
+      }
+    ?>
+
     <hr style="margin: 30px 0; border: 1px solid #00c3ff;">
 
-    <h3>Daftar Berita Gaming</h3>
-
+    <h3>Daftar Berita Gaming (Contoh)</h3>
     <table id="tabelBerita">
       <tr>
         <th>ID</th>
@@ -115,46 +128,21 @@
         <th>Aksi</th>
       </tr>
 
-      <?php
-        // === Koneksi Database ===
-        $conn = new mysqli("localhost", "root", "", "db_arenagamers");
-        if ($conn->connect_error) {
-          die("Koneksi gagal: " . $conn->connect_error);
-        }
-
-        // === Proses Tambah Berita ===
-        if (isset($_POST['submit'])) {
-          $judul = $conn->real_escape_string($_POST['judul']);
-          $isi = $conn->real_escape_string($_POST['isi']);
-          $penulis = $conn->real_escape_string($_POST['penulis']);
-
-          $sql = "INSERT INTO tb_berita (judul, isi, penulis, tanggal) VALUES ('$judul', '$isi', '$penulis', NOW())";
-          if ($conn->query($sql) === TRUE) {
-            echo "<script>alert('Berita berhasil ditambahkan!'); window.location.href='berita.php';</script>";
-          } else {
-            echo "Error: " . $conn->error;
-          }
-        }
-
-        // === Ambil Data Berita ===
-        $query = $conn->query("SELECT * FROM tb_berita ORDER BY tanggal DESC");
-        $no = 1;
-        while ($data = $query->fetch_assoc()) {
-          echo "
-            <tr>
-              <td>{$no}</td>
-              <td>{$data['judul']}</td>
-              <td>{$data['penulis']}</td>
-              <td>{$data['tanggal']}</td>
-              <td>
-                <a href='hapus_berita.php?id={$data['id']}' onclick='return confirm(\"Yakin hapus?\")'>Hapus</a>
-              </td>
-            </tr>
-          ";
-          $no++;
-        }
-        $conn->close();
-      ?>
+      <!-- Data dummy contoh -->
+      <tr>
+        <td>1</td>
+        <td>Update Esports 2025</td>
+        <td>Admin</td>
+        <td>2025-11-02</td>
+        <td><a href="#">Hapus</a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Turnamen Valorant Global</td>
+        <td>Reno</td>
+        <td>2025-10-28</td>
+        <td><a href="#">Hapus</a></td>
+      </tr>
     </table>
   </div>
 
